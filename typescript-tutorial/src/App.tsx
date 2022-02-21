@@ -19,10 +19,21 @@ let personName:unknown;
 ///It's better to use 'never' and 'unknown' than using 'void,any'.
 
 
-type Person={
+// type Person={
+//   name:string
+//   age?:number
+// }
+interface Person{
   name:string
   age?:number
 }
+//'type' and 'interface' are almost same!
+//but better to use 'interface',because⏬
+interface Guy extends Person{
+  profession:string
+}
+
+
 let person:Person={
   name:"yoshino",
   age:25
@@ -31,11 +42,21 @@ let person:Person={
 let lotOfPerson:Person[];
 
 
+type X={
+  a:string;
+  b:number;
+}
+type Y=X&{
+  c:string;
+  d:number;
+}
+
+
 
 function App() {
   return (
     <div className="App">
-      Hello World
+      Hello World App
     </div>
   );
 }
